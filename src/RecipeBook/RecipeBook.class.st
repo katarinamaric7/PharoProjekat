@@ -50,13 +50,6 @@ RecipeBook class >> reset [
 ]
 
 { #category : #adding }
-RecipeBook >> addRatingToRecipe: aRecipe rating: anInteger [
-    | foundRecipe |
-    foundRecipe := recipes detect: [ :recipe | recipe = aRecipe ] ifNone: [0].
-    foundRecipe ifNotNil: [foundRecipe rating: anInteger]
-]
-
-{ #category : #adding }
 RecipeBook >> addRecipe: aRecipe [
    recipes add: aRecipe.
 	aRecipe save.
