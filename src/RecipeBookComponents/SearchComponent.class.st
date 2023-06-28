@@ -3,7 +3,7 @@ Class {
 	#superclass : #ScreenComponent,
 	#instVars : [
 		'recipes',
-		'ingredients'
+		'ingredient'
 	],
 	#category : #RecipeBookComponents
 }
@@ -21,7 +21,20 @@ SearchComponent >> goToRecipesListView [
 { #category : #rendering }
 SearchComponent >> renderContentOn: html [
 	super renderContentOn: html.
-	html tbsContainer: [
-	html heading: 'Search Ingredient'.
-	html horizontalRule. ]
+	 html form: [
+        html textInput
+            value: ingredient ;
+            callback: [:value | ingredient := value];
+            yourself.
+        html submitButton
+            text: 'Search';
+            callback: [ self searchRecipes ];
+            yourself
+    ].
+
+]
+
+{ #category : #acccessing }
+SearchComponent >> searchRecipes [
+    recipes := self session application book searchRecipesWithIngredient: ingredient
 ]
