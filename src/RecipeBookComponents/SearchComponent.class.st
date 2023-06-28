@@ -3,14 +3,20 @@ Class {
 	#superclass : #ScreenComponent,
 	#instVars : [
 		'recipes',
-		'ingredient'
+		'ingredient',
+		'report'
 	],
 	#category : #RecipeBookComponents
 }
 
+{ #category : #hooks }
+SearchComponent >> children [
+	^ super children copyWith: self report
+]
+
 { #category : #acccessing }
 SearchComponent >> createHeaderComponent [
-	^ SearchHeaderComponent from: self
+	^ EggsHeaderComponent from: self
 ]
 
 { #category : #acccessing }
@@ -18,23 +24,28 @@ SearchComponent >> goToRecipesListView [
 	self answer
 ]
 
+{ #category : #acccessing }
+SearchComponent >> initialize [
+	super initialize.
+	self report: (RecipeWithEggsReport from: self book)
+]
+
 { #category : #rendering }
 SearchComponent >> renderContentOn: html [
 	super renderContentOn: html.
-	 html form: [
-        html textInput
-            value: ingredient ;
-            callback: [:value | ingredient := value];
-            yourself.
-        html submitButton
-            text: 'Search';
-            callback: [ self searchRecipes ];
-            yourself
-    ].
+	html tbsContainer: [
+	html heading: 'Recipes with eggs'.
+	html horizontalRule.
+	html render: self report ]
 
 ]
 
-{ #category : #acccessing }
-SearchComponent >> searchRecipes [
-    recipes := self session application book searchRecipesWithIngredient: ingredient
+{ #category : #accessing }
+SearchComponent >> report [
+	^ report
+]
+
+{ #category : #accessing }
+SearchComponent >> report: aReport [
+	report := aReport
 ]

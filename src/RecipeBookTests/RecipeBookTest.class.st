@@ -86,6 +86,6 @@ RecipeBookTest >> testRemoveRecipe [
 
 { #category : #acccessing }
 RecipeBookTest >> testSearchRecipesWithIngredient [
-   self assert: (book searchRecipesWithIngredient: 'Eggs')
+   self assert: (book searchRecipesWithEggs: 'Eggs')
 	size equals: 2
 ]

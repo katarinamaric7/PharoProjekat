@@ -1,16 +1,16 @@
 Class {
-	#name : #SearchHeaderComponent,
+	#name : #EggsHeaderComponent,
 	#superclass : #HeaderComponent,
 	#category : #RecipeBookComponents
 }
 
 { #category : #acccessing }
-SearchHeaderComponent >> renderButtonsOn: html [
+EggsHeaderComponent >> renderButtonsOn: html [
 	html form: [ self renderDisconnectButtonOn: html ]
 ]
 
 { #category : #rendering }
-SearchHeaderComponent >> renderDisconnectButtonOn: html [
+EggsHeaderComponent >> renderDisconnectButtonOn: html [
 	html tbsNavbarButton
 	tbsPullRight;
 	callback: [ component goToRecipesListView ];

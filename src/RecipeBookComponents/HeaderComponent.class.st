@@ -36,7 +36,7 @@ HeaderComponent >> renderBrandOn: html [
 { #category : #acccessing }
 HeaderComponent >> renderButtonsOn: html [
 	self renderSimpleAdminButtonOn: html.
-	self renderSearchButtonOn: html
+	self renderEggsButtonOn: html
 ]
 
 { #category : #rendering }
@@ -49,14 +49,14 @@ HeaderComponent >> renderContentOn: html [
 ]
 
 { #category : #rendering }
-HeaderComponent >> renderSearchButtonOn: html [
+HeaderComponent >> renderEggsButtonOn: html [
 	html form: [
 		html tbsNavbarButton
 		tbsPullRight;
 		callback: [ component goToSearchView ];
 		with: [
 			html tbsGlyphIcon iconListAlt.
-			html text: ' Search ' ]]
+			html text: ' Recipes with eggs ' ]]
 ]
 
 { #category : #rendering }

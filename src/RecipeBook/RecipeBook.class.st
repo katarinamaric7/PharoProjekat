@@ -2,8 +2,7 @@ Class {
 	#name : #RecipeBook,
 	#superclass : #Object,
 	#instVars : [
-		'recipes',
-		'rating'
+		'recipes'
 	],
 	#category : #RecipeBook
 }
@@ -48,11 +47,6 @@ RecipeBook class >> isVoyageRoot [
 { #category : #initialization }
 RecipeBook class >> reset [
 	self initializeVoyageOnMemoryDB
-]
-
-{ #category : #adding }
-RecipeBook >> addRatingToBook: anInteger [
-	rating := anInteger
 ]
 
 { #category : #adding }
@@ -119,6 +113,6 @@ RecipeBook >> removeRecipe: aRecipe [
 ]
 
 { #category : #acccessing }
-RecipeBook >> searchRecipesWithIngredient: anIngredient [
+RecipeBook >> searchRecipesWithEggs: anIngredient [
     ^ recipes select: [ :recipe | recipe ingredients includesSubstring: anIngredient ]
 ]
