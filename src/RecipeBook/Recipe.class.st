@@ -38,6 +38,7 @@ Recipe >> descriptionCategory [
 		label: 'Category';
 		priority: 300;
 		accessor: #category;
+		beRequired;
 		yourself
 ]
 
