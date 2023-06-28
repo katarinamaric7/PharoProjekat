@@ -2,7 +2,8 @@ Class {
 	#name : #RecipeBook,
 	#superclass : #Object,
 	#instVars : [
-		'recipes'
+		'recipes',
+		'rating'
 	],
 	#category : #RecipeBook
 }
@@ -47,6 +48,11 @@ RecipeBook class >> isVoyageRoot [
 { #category : #initialization }
 RecipeBook class >> reset [
 	self initializeVoyageOnMemoryDB
+]
+
+{ #category : #adding }
+RecipeBook >> addRatingToBook: anInteger [
+	rating := anInteger
 ]
 
 { #category : #adding }

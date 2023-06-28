@@ -5,8 +5,7 @@ Class {
 		'name',
 		'category',
 		'ingredients',
-		'instructions',
-		'rating'
+		'instructions'
 	],
 	#category : #RecipeBook
 }
@@ -88,7 +87,6 @@ Recipe >> ingredients: anIngredient [
 { #category : #initialization }
 Recipe >> initialize [
     super initialize.
-    rating := 0
 ]
 
 { #category : #accessing }
@@ -109,14 +107,4 @@ Recipe >> name [
 { #category : #accessing }
 Recipe >> name: aString [
 	name := aString 
-]
-
-{ #category : #accessing }
-Recipe >> rating [
-    ^ rating
-]
-
-{ #category : #initialization }
-Recipe >> rating: aRating [
-    rating := aRating
 ]
