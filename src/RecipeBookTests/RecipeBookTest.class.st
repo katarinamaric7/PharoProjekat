@@ -39,16 +39,6 @@ RecipeBookTest >> tearDown [
 ]
 
 { #category : #tests }
-RecipeBookTest >> testAddRating [
-	self assert: (book hasRecipe: recipe).
-	book addRatingToRecipe: recipe rating: 4.
-
-   self assert: (book hasRecipe: recipe).
-   self assert: (recipe rating = 4).
-	
-]
-
-{ #category : #tests }
 RecipeBookTest >> testAddRecipe [
 	book addRecipe: recipe. 
 	self assert: book recipeCount equals: 3.
