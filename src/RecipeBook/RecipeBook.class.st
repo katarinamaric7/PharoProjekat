@@ -108,7 +108,8 @@ RecipeBook >> removeAllRecipes [
 
 { #category : #removing }
 RecipeBook >> removeRecipe: aRecipe [
-    recipes remove: aRecipe
+   recipes remove: aRecipe ifAbsent: [ ].
+	self save.
 ]
 
 { #category : #acccessing }

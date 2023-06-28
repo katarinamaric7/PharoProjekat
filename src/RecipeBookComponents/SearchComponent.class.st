@@ -17,3 +17,11 @@ SearchComponent >> createHeaderComponent [
 SearchComponent >> goToRecipesListView [
 	self answer
 ]
+
+{ #category : #rendering }
+SearchComponent >> renderContentOn: html [
+	super renderContentOn: html.
+	html tbsContainer: [
+	html heading: 'Search Ingredient'.
+	html horizontalRule. ]
+]
