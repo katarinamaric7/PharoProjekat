@@ -3,7 +3,7 @@ Class {
 	#superclass : #ScreenComponent,
 	#instVars : [
 		'recipes',
-		'ingredient',
+		'ingredientInput',
 		'report'
 	],
 	#category : #RecipeBookComponents
@@ -27,7 +27,7 @@ RecipeWithIngredientComponent >> goToRecipesListView [
 { #category : #acccessing }
 RecipeWithIngredientComponent >> initialize [
 	super initialize.
-	self report: (RecipeWithEggsReport from: self book)
+	self report: (RecipeWithEggsReport from: self book ingredient: ingredientInput)
 ]
 
 { #category : #rendering }
@@ -36,6 +36,17 @@ RecipeWithIngredientComponent >> renderContentOn: html [
 	html tbsContainer: [
 	html heading: 'Recipes with eggs'.
 	html horizontalRule.
+	 html form: [
+        html paragraph: [
+            html text: 'Ingredient: '.
+            ingredientInput := html textInput
+                id: 'ingredientInput';
+                yourself.
+            html submitButton
+                callback: [ self report: ingredientInput value ];
+                with: 'Search'.
+        ]
+    ].
 	html render: self report ]
 
 ]
