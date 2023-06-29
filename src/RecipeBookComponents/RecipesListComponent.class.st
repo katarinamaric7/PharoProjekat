@@ -72,7 +72,8 @@ RecipesListComponent >> recipeComponents [
 
 { #category : #rendering }
 RecipesListComponent >> renderContentOn: html [
-	super renderContentOn: html.html tbsContainer: [
+	super renderContentOn: html.
+	html tbsContainer: [
 	html tbsRow showGrid;
 		with: [
 			html tbsColumn
