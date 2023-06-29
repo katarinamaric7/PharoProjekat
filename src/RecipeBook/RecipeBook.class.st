@@ -58,7 +58,7 @@ RecipeBook >> addRecipe: aRecipe [
 
 { #category : #private }
 RecipeBook >> allCategories [
-^ (self allRecipes collect: [ :r | r category ]) asSet
+	^ (self allRecipes collect: [ :r | r category ]) asSet
 ]
 
 { #category : #acccessing }
@@ -87,11 +87,6 @@ RecipeBook >> recipesByCategory: aCategory [
     ^ recipes select: [ :recipe | recipe category = aCategory ]
 ]
 
-{ #category : #acccessing }
-RecipeBook >> recipesFirst [
-	^ recipes first
-]
-
 { #category : #removing }
 RecipeBook >> removeAllRecipes [
 	recipes do: [ :each | each remove ].
@@ -106,6 +101,6 @@ RecipeBook >> removeRecipe: aRecipe [
 ]
 
 { #category : #acccessing }
-RecipeBook >> searchRecipesWithEggs: anIngredient [
+RecipeBook >> searchRecipesWithIngredient: anIngredient [
     ^ recipes select: [ :recipe | recipe ingredients includesSubstring: anIngredient ]
 ]

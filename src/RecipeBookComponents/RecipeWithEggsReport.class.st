@@ -18,7 +18,7 @@ RecipeWithEggsReport class >> filteredDescriptionsFrom: aRecipe [
 { #category : #'instance creation' }
 RecipeWithEggsReport class >> from: aBook [
 	| recipes |
-	recipes := aBook searchRecipesWithEggs: 'Eggs'.
+	recipes := aBook searchRecipesWithIngredient: 'Eggs'.
 	^ self rows: recipes description: (self filteredDescriptionsFrom:recipes anyOne)
 	
 ]
