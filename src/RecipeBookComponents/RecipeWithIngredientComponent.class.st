@@ -1,5 +1,5 @@
 Class {
-	#name : #RecipeWithEggsComponent,
+	#name : #RecipeWithIngredientComponent,
 	#superclass : #ScreenComponent,
 	#instVars : [
 		'recipes',
@@ -10,28 +10,28 @@ Class {
 }
 
 { #category : #hooks }
-RecipeWithEggsComponent >> children [
+RecipeWithIngredientComponent >> children [
 	^ super children copyWith: self report
 ]
 
 { #category : #acccessing }
-RecipeWithEggsComponent >> createHeaderComponent [
+RecipeWithIngredientComponent >> createHeaderComponent [
 	^ IngredientHeaderComponent from: self
 ]
 
 { #category : #acccessing }
-RecipeWithEggsComponent >> goToRecipesListView [
+RecipeWithIngredientComponent >> goToRecipesListView [
 	self answer
 ]
 
 { #category : #acccessing }
-RecipeWithEggsComponent >> initialize [
+RecipeWithIngredientComponent >> initialize [
 	super initialize.
 	self report: (RecipeWithEggsReport from: self book)
 ]
 
 { #category : #rendering }
-RecipeWithEggsComponent >> renderContentOn: html [
+RecipeWithIngredientComponent >> renderContentOn: html [
 	super renderContentOn: html.
 	html tbsContainer: [
 	html heading: 'Recipes with eggs'.
@@ -41,11 +41,11 @@ RecipeWithEggsComponent >> renderContentOn: html [
 ]
 
 { #category : #accessing }
-RecipeWithEggsComponent >> report [
+RecipeWithIngredientComponent >> report [
 	^ report
 ]
 
 { #category : #accessing }
-RecipeWithEggsComponent >> report: aReport [
+RecipeWithIngredientComponent >> report: aReport [
 	report := aReport
 ]
