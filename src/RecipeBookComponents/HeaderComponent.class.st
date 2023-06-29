@@ -64,7 +64,7 @@ HeaderComponent >> renderIngredientButtonOn: html [
 	html form: [
 		html tbsNavbarButton
 			tbsPullRight;
-			callback: [ component goToSearchView ];
+			callback: [ component goToIngredientView ];
 			with: [
 				html tbsGlyphIcon iconListAlt.
 				html text: ' Recipes with eggs ' ]] 

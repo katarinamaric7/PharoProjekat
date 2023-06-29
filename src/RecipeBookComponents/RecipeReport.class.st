@@ -18,7 +18,7 @@ report addColumn: (MACommandColumn new
 				addCommandOn: report selector: #editRecipe: text: 'Edit';
 				yourself;
 				addCommandOn: report selector: #deleteRecipe: text: 'Delete';
-				yourself ).
+				yourself ). 
 ^ report
 ]
 

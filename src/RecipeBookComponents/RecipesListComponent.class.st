@@ -38,7 +38,7 @@ RecipesListComponent >> goToAdministrationView [
 ]
 
 { #category : #acccessing }
-RecipesListComponent >> goToSearchView [
+RecipesListComponent >> goToIngredientView [
 	self call: RecipeWithEggsComponent new
 ]
 
