@@ -1,5 +1,5 @@
 Class {
-	#name : #SearchComponent,
+	#name : #RecipeWithEggsComponent,
 	#superclass : #ScreenComponent,
 	#instVars : [
 		'recipes',
@@ -10,28 +10,28 @@ Class {
 }
 
 { #category : #hooks }
-SearchComponent >> children [
+RecipeWithEggsComponent >> children [
 	^ super children copyWith: self report
 ]
 
 { #category : #acccessing }
-SearchComponent >> createHeaderComponent [
-	^ EggsHeaderComponent from: self
+RecipeWithEggsComponent >> createHeaderComponent [
+	^ IngredientHeaderComponent from: self
 ]
 
 { #category : #acccessing }
-SearchComponent >> goToRecipesListView [
+RecipeWithEggsComponent >> goToRecipesListView [
 	self answer
 ]
 
 { #category : #acccessing }
-SearchComponent >> initialize [
+RecipeWithEggsComponent >> initialize [
 	super initialize.
 	self report: (RecipeWithEggsReport from: self book)
 ]
 
 { #category : #rendering }
-SearchComponent >> renderContentOn: html [
+RecipeWithEggsComponent >> renderContentOn: html [
 	super renderContentOn: html.
 	html tbsContainer: [
 	html heading: 'Recipes with eggs'.
@@ -41,11 +41,11 @@ SearchComponent >> renderContentOn: html [
 ]
 
 { #category : #accessing }
-SearchComponent >> report [
+RecipeWithEggsComponent >> report [
 	^ report
 ]
 
 { #category : #accessing }
-SearchComponent >> report: aReport [
+RecipeWithEggsComponent >> report: aReport [
 	report := aReport
 ]

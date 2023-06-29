@@ -26,6 +26,17 @@ HeaderComponent >> component: anObject [
 ]
 
 { #category : #rendering }
+HeaderComponent >> renderAdminButtonOn: html [
+	html form: [
+		html tbsNavbarButton
+			tbsPullRight;
+			callback: [ component goToAdministrationView ];
+			with: [
+				html tbsGlyphIcon iconListAlt.
+				html text: ' Admin View' ]]
+]
+
+{ #category : #rendering }
 HeaderComponent >> renderBrandOn: html [
 	html tbsNavbarHeader: [
 		html tbsNavbarBrand
@@ -35,8 +46,8 @@ HeaderComponent >> renderBrandOn: html [
 
 { #category : #acccessing }
 HeaderComponent >> renderButtonsOn: html [
-	self renderSimpleAdminButtonOn: html.
-	self renderEggsButtonOn: html
+	self renderAdminButtonOn: html.
+	self renderIngredientButtonOn: html
 ]
 
 { #category : #rendering }
@@ -45,27 +56,16 @@ HeaderComponent >> renderContentOn: html [
 		html tbsContainer: [
 			self renderBrandOn: html.
 			self renderButtonsOn: html
-	]]
+	]] 
 ]
 
 { #category : #rendering }
-HeaderComponent >> renderEggsButtonOn: html [
+HeaderComponent >> renderIngredientButtonOn: html [
 	html form: [
 		html tbsNavbarButton
-		tbsPullRight;
-		callback: [ component goToSearchView ];
-		with: [
-			html tbsGlyphIcon iconListAlt.
-			html text: ' Recipes with eggs ' ]]
-]
-
-{ #category : #rendering }
-HeaderComponent >> renderSimpleAdminButtonOn: html [
-	html form: [
-		html tbsNavbarButton
-		tbsPullRight;
-		callback: [ component goToAdministrationView ];
-		with: [
-		html tbsGlyphIcon iconListAlt.
-		html text: ' Admin View' ]]
+			tbsPullRight;
+			callback: [ component goToSearchView ];
+			with: [
+				html tbsGlyphIcon iconListAlt.
+				html text: ' Recipes with eggs ' ]] 
 ]
