@@ -24,10 +24,20 @@ RecipeWithIngredientComponent >> goToRecipesListView [
 	self answer
 ]
 
+{ #category : #accessing }
+RecipeWithIngredientComponent >> ingredientInput [
+	^ ingredientInput 
+]
+
+{ #category : #accessing }
+RecipeWithIngredientComponent >> ingredientInput: anInput [
+    ingredientInput := anInput
+]
+
 { #category : #acccessing }
 RecipeWithIngredientComponent >> initialize [
 	super initialize.
-	self report: (RecipeWithEggsReport from: self book ingredient: ingredientInput)
+	self report: (RecipeWithEggsReport from: self book)
 ]
 
 { #category : #rendering }
@@ -43,7 +53,7 @@ RecipeWithIngredientComponent >> renderContentOn: html [
                 id: 'ingredientInput';
                 yourself.
             html submitButton
-                callback: [ self report: ingredientInput value ];
+                callback: [self report from: self book ingredient: ingredientInput value];
                 with: 'Search'.
         ]
     ].

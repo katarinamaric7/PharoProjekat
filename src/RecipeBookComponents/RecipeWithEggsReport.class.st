@@ -16,11 +16,17 @@ RecipeWithEggsReport class >> filteredDescriptionsFrom: aRecipe [
 ]
 
 { #category : #'instance creation' }
+RecipeWithEggsReport class >> from: aBook [  
+	| recipes | 
+	recipes := aBook allRecipes. 
+	^ self rows: recipes description: (self filteredDescriptionsFrom:recipes anyOne) 
+]
+
+{ #category : #'instance creation' }
 RecipeWithEggsReport class >> from: aBook ingredient: anIngredient [ 
-	| recipes |
-	recipes := aBook searchRecipesWithIngredient: anIngredient.
-	^ self rows: recipes description: (self filteredDescriptionsFrom:recipes anyOne)
-	
+	| recipes | 
+	recipes := aBook searchRecipesWithIngredient: anIngredient. 
+	^ self rows: recipes description: (self filteredDescriptionsFrom:recipes anyOne) 
 ]
 
 { #category : #accessing }
