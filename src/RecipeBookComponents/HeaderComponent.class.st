@@ -67,5 +67,5 @@ HeaderComponent >> renderIngredientButtonOn: html [
 			callback: [ component goToIngredientView ];
 			with: [
 				html tbsGlyphIcon iconListAlt.
-				html text: ' Recipes with eggs ' ]] 
+				html text: ' Search View ' ]] 
 ]

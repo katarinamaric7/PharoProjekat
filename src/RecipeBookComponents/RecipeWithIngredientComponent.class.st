@@ -47,12 +47,11 @@ RecipeWithIngredientComponent >> renderContentOn: html [
 	html heading: 'Recipes with ingredient'.
 	html horizontalRule.
 	 html form: [
-        html paragraph: [
-				
+        html paragraph: [  
             html text: 'Ingredient: '.
-            ingredientInput := html textInput 
-                id: 'ingredientInput';
-                yourself.
+            ingredientInput := html textInput
+    			id: 'ingredientInput';
+    			yourself.
             html submitButton              
 					callback: [self report: (RecipeWithIngredientReport from: self book ingredient: 'Chicken') ];
                 with: 'Search'.
