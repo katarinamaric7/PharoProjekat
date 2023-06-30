@@ -7,19 +7,11 @@ Class {
 	#category : #RecipeBookComponents
 }
 
-{ #category : #acccessing }
-RecipeWithIngredientReport class >> filteredDescriptionsFrom: aRecipe [
-	^ aRecipe magritteDescription
-		select: [ :each | #(name ingredients) includes: each accessor
-		selector ]
-
-]
-
 { #category : #'instance creation' }
 RecipeWithIngredientReport class >> from: aBook ingredient: anIngredient [
     | report recipes |
     recipes := aBook searchRecipesWithIngredient: anIngredient.
-    report := self rows: recipes description: recipes 
+    report := self rows: recipes description: recipes anyOne
 	magritteDescription.
 	report book: aBook.
 	^ report
