@@ -102,5 +102,5 @@ RecipeBook >> removeRecipe: aRecipe [
 
 { #category : #acccessing }
 RecipeBook >> searchRecipesWithIngredient: anIngredient [
-    ^ recipes select: [ :recipe | recipe ingredients includesSubstring: anIngredient ]
+    ^ recipes select: [ :recipe | recipe ifNotNil: [ recipe ingredients includesSubstring: anIngredient ] ]
 ]

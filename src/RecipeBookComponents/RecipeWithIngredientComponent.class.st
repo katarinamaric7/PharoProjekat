@@ -37,14 +37,14 @@ RecipeWithIngredientComponent >> ingredientInput: anInput [
 { #category : #acccessing }
 RecipeWithIngredientComponent >> initialize [
 	super initialize.
-	self report: (RecipeWithEggsReport from: self book)
+	
 ]
 
 { #category : #rendering }
 RecipeWithIngredientComponent >> renderContentOn: html [
 	super renderContentOn: html.
 	html tbsContainer: [
-	html heading: 'Recipes with eggs'.
+	html heading: 'Recipes with ingredient'.
 	html horizontalRule.
 	 html form: [
         html paragraph: [
@@ -53,7 +53,7 @@ RecipeWithIngredientComponent >> renderContentOn: html [
                 id: 'ingredientInput';
                 yourself.
             html submitButton
-                callback: [self report from: self book ingredient: ingredientInput value];
+                callback: [self report: (RecipeWithIngredientReport from: self book ingredient: ingredientInput value asString ) ];
                 with: 'Search'.
         ]
     ].
@@ -62,11 +62,13 @@ RecipeWithIngredientComponent >> renderContentOn: html [
 ]
 
 { #category : #accessing }
-RecipeWithIngredientComponent >> report [
-	^ report
+RecipeWithIngredientComponent >> report [ 
+
+	^ report 
 ]
 
 { #category : #accessing }
-RecipeWithIngredientComponent >> report: aReport [
-	report := aReport
+RecipeWithIngredientComponent >> report: aReport [ 
+
+	report := aReport 
 ]
